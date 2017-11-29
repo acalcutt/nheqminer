@@ -107,7 +107,6 @@ dkms.conf
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
-[Rr]eleases/
 x64/
 x86/
 bld/
@@ -340,6 +339,7 @@ FakesAssemblies/
 _Pvt_Extensions
 
 # Paket dependency manager
+.paket/paket.exe
 paket-files/
 
 # FAKE - F# Make
