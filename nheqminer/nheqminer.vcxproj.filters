@@ -182,6 +182,9 @@
     <ClInclude Include="MinerFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -229,5 +232,8 @@
     <ClCompile Include="MinerFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="nheqminer.rc" />
   </ItemGroup>
 </Project>
