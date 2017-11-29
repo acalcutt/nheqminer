@@ -72,13 +72,8 @@ void print_help()
 {
 	std::cout << "Parameters: " << std::endl;
 	std::cout << "\t-h\t\tPrint this help and quit" << std::endl;
-#ifndef ZCASH_POOL
 	std::cout << "\t-l [location]\tStratum server:port" << std::endl;
-	std::cout << "\t-u [username]\tUsername (bitcoinaddress)" << std::endl;
-#else
-	std::cout << "\t-l [location]\tLocation (eu, usa)" << std::endl;
-	std::cout << "\t-u [username]\tUsername (Zcash wallet address)" << std::endl;
-#endif
+	std::cout << "\t-u [username]\tUsername (worker)" << std::endl;
 	std::cout << "\t-a [port]\tLocal API port (default: 0 = do not bind)" << std::endl;
 	std::cout << "\t-d [level]\tDebug print level (0 = print all, 5 = fatal only, default: 2)" << std::endl;
 	std::cout << "\t-b [hashes]\tRun in benchmark mode (default: 200 iterations)" << std::endl;
@@ -242,16 +237,16 @@ int main(int argc, char* argv[])
 #endif
 
 	std::cout << std::endl;
-	std::cout << "\t==================== www.nicehash.com ====================" << std::endl;
-	std::cout << "\t\tEquihash CPU&GPU Miner for NiceHash v" STANDALONE_MINER_VERSION << std::endl;
+	std::cout << "\t============================================================" << std::endl;
+	std::cout << "\t\tEquihash CPU&GPU Miner (nheqminer based) v" STANDALONE_MINER_VERSION << std::endl;
 	std::cout << "\tThanks to Zcash developers for providing base of the code." << std::endl;
 	std::cout << "\t    Special thanks to tromp, xenoncat and djeZo for providing "<< std::endl;
 	std::cout << "\t      optimized CPU and CUDA equihash solvers." << std::endl;
-	std::cout << "\t==================== www.nicehash.com ====================" << std::endl;
+	std::cout << "\t============================================================" << std::endl;
 	std::cout << std::endl;
 
-	std::string location = "equihash.eu.nicehash.com:3357";
-	std::string user = "34HKWdzLxWBduUfJE9JxaFhoXnfC6gmePG";
+	std::string location = "us-east.pool.gold:3044";
+	std::string user = "GbdHiqZaXWq4mDezTpdG28ovD6UuveW982";
 	std::string password = "x";
 	int num_threads = 0;
 	bool benchmark = false;
@@ -458,8 +453,8 @@ int main(int argc, char* argv[])
 			}
 
 			size_t delim = location.find(':');
-			std::string host = delim != std::string::npos ? location.substr(0, delim) : location;
-			std::string port = delim != std::string::npos ? location.substr(delim + 1) : "2142";
+			std::string host = location.substr(0, delim);
+			std::string port = location.substr(delim + 1);
 
 			start_mining(api_port, host, port, user, password,
 				scSig,
