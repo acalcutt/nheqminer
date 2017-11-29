@@ -5,7 +5,7 @@
 
 # Object files
 *.o
-*.ko
+*.kolib
 *.obj
 *.elf
 
@@ -19,19 +19,16 @@
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
 *.so
 *.so.*
 *.dylib
 
 # Executables
-*.exe
 *.out
 *.app
 *.i*86
@@ -73,7 +70,6 @@ dkms.conf
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
@@ -83,10 +79,8 @@ dkms.conf
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
-*.exe
 *.out
 *.app
 
@@ -346,7 +340,6 @@ FakesAssemblies/
 _Pvt_Extensions
 
 # Paket dependency manager
-.paket/paket.exe
 paket-files/
 
 # FAKE - F# Make
@@ -379,7 +372,6 @@ __pycache__/
 *.la
 *.lai
 *.so
-*.dll
 *.dylib
 
 # Qt-es
